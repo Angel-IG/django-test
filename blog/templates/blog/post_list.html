@@ -3,6 +3,20 @@
         <title>Blog con Django</title>
     </head>
     <body>
-        <h1>La página funciona a la perfección</h1>
+        <div>
+            <h1>
+                <a href="/">Blog with Django</a>
+            </h1>
+        </div>
+
+        {% for post in posts %}
+        <div>
+            <p>publicado: {{ post.published_date }}</p>
+            <h1>
+                <a href="">{{ post.title }}</a>
+            </h1>
+            <p>{{ post.text }}</p>
+        </div>
+        {% endfor %}
     </body>
 </html>
