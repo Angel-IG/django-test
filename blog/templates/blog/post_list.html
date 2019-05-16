@@ -1,21 +1,30 @@
+{% load static %}
 <html>
     <head>
         <title>Blog con Django</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div>
-            <h1>
-                <a href="/">Blog with Django</a>
-            </h1>
-        </div>
+        <center>
+            <div>
+                <h1>
+                    <a href="/">Blog con Django</a>
+                </h1>
+            </div>
+            <hr color="black">
+        </center>
 
         {% for post in posts %}
+        <br>
         <div>
             <p>publicado: {{ post.published_date }}</p>
-            <h1>
+            <h3>
                 <a href="">{{ post.title }}</a>
-            </h1>
+            </h3>
             <p>{{ post.text }}</p>
+            <hr>
         </div>
         {% endfor %}
     </body>
